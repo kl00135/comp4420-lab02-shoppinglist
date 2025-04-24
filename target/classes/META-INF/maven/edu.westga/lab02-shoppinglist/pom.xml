@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.westga</groupId>
+  <artifactId>lab02-shoppinglist</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Archetype - lab02-shoppinglist</name>
+  <url>http://maven.apache.org</url>
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>17</maven.compiler.source>
+  <maven.compiler.target>17</maven.compiler.target>
+  <javafx.version>19</javafx.version>
+  <jacoco.version>0.8.8</jacoco.version>
+  <checkstyle.version>9.3</checkstyle.version>
+  <testfx.version>4.0.16-alpha</testfx.version>
+</properties>
+
+<dependencies>
+  <!-- JUnit 5 for unit testing -->
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.2</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- JavaFX modules -->
+  <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>${javafx.version}</version>
+  </dependency>
+
+
+  <!-- TestFX for UI testing -->
+  <dependency>
+    <groupId>org.testfx</groupId>
+    <artifactId>testfx-core</artifactId>
+    <version>${testfx.version}</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.testfx</groupId>
+    <artifactId>testfx-junit5</artifactId>
+    <version>${testfx.version}</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <!-- Compiler plugin: ensure Java 17 -->
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.10.1</version>
+      <configuration>
+        <release>17</release>
+      </configuration>
+    </plugin>
+
+    <!-- Surefire -->
+    <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0-M7</version>
+    </plugin>
+
+    <!-- JaCoCo -->
+    <plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>${jacoco.version}</version>
+      <executions>
+        <execution>
+          <goals><goal>prepare-agent</goal></goals>
+        </execution>
+        <execution>
+          <id>report</id>
+          <phase>verify</phase>
+          <goals><goal>report</goal></goals>
+        </execution>
+      </executions>
+    </plugin>
+    <!-- Checkstyle -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>3.2.2</version>
+      <configuration>
+        <configLocation>google_checks.xml</configLocation>
+        <failOnViolation>true</failOnViolation>
+      </configuration>
+      <executions>
+        <execution>
+          <phase>validate</phase>
+          <goals><goal>check</goal></goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+</project>

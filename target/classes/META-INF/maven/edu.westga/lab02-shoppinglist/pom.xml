@@ -46,10 +46,31 @@
     <version>${testfx.version}</version>
     <scope>test</scope>
   </dependency>
+  
+    <!-- javafxml -->
+  <dependency>
+  <groupId>org.openjfx</groupId>
+  <artifactId>javafx-fxml</artifactId>
+  <version>${javafx.version}</version>
+</dependency>
 </dependencies>
 
 <build>
   <plugins>
+  <!-- JavaFX -->
+	<plugin>
+  	<groupId>org.openjfx</groupId>
+ 	 <artifactId>javafx-maven-plugin</artifactId>
+ 	 <version>0.0.8</version>
+ 	 <configuration>
+  	  <mainClass>edu.westga.lab02_shoppinglist.ShoppingListApp</mainClass>
+  	  <modules>
+  	    <module>javafx.controls</module>
+  	    <module>javafx.fxml</module>
+  	  </modules>
+  </configuration>
+	</plugin>
+        
     <!-- Compiler plugin: ensure Java 17 -->
     <plugin>
       <artifactId>maven-compiler-plugin</artifactId>

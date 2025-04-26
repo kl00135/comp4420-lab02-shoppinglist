@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="edu.westga.lab02_shoppinglist.ShoppingListController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Label text="Shopping List:" />
+    
+    <ListView fx:id="itemListView" prefHeight="200.0" />
+    
+    <TextField fx:id="itemNameField" promptText="Item Name" />
+    <TextField fx:id="itemQuantityField" promptText="Quantity" />
+    
+    <Button text="Add Item" onAction="#handleAddItem" />
+    <Button text="Update Quantity" onAction="#handleUpdateQuantity" />
+    <Button text="Remove Selected" onAction="#handleRemoveItem" />
+</VBox>

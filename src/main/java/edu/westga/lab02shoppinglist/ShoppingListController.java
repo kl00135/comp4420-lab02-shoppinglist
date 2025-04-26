@@ -30,6 +30,9 @@ public class ShoppingListController {
 
   @FXML
   private Button removeButton;
+  
+  @FXML
+  private Button addButton;
 
   private ShoppingList shoppingList;
 

@@ -63,7 +63,7 @@
  	 <artifactId>javafx-maven-plugin</artifactId>
  	 <version>0.0.8</version>
  	 <configuration>
-  	  <mainClass>edu.westga.lab02_shoppinglist.ShoppingListApp</mainClass>
+  	  <mainClass>edu.westga.lab02shoppinglist.ShoppingListApp</mainClass>
   	  <modules>
   	    <module>javafx.controls</module>
   	    <module>javafx.fxml</module>
